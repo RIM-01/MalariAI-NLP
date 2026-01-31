@@ -81,7 +81,3 @@ def llama_chat(request: ChatRequest):
         return {"reply": completion.choices[0].message.content}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-# --- 4. RUNNER ---
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
